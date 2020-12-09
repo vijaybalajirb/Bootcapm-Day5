@@ -49,9 +49,21 @@ return accumulator + currentValue.population
 console.log(totalPopulation)
 
 //5.Print the country which use US Dollars as currency
-var dollarAsCurrency= data.filter(ele=>ele.currencies[0].code==="USD");
-for(i in dollarAsCurrency){
-console.log(dollarAsCurrency[i].name)}
+var usd_currency=data.filter((item) =>{
+   let flag=false;
+   item.currencies.forEach(element =>{
+       if(element.code==='USD')
+       {
+           flag=true;
+       }
+   })  
+if(flag==true){
+ return true}
+ else{
+return false;
+ }
+});
+console.log(usd_currency)
 
 
 
